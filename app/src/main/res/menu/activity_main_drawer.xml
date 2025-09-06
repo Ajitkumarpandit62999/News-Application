@@ -29,6 +29,25 @@
             android:icon="@drawable/sky_news"
             android:title="SKY News"
             android:menuCategory="secondary"/>
+
+        <item
+            android:id="@+id/nav_ABPNEWS"
+            android:icon="@drawable/abp"
+            android:title="ABP NEWS"
+            android:menuCategory="secondary"/>
+
+        <item
+            android:id="@+id/nav_AajTakNews"
+            android:icon="@drawable/aajtak"
+            android:title="AajTak NEWS"
+            android:menuCategory="secondary"/>
+
+        <item
+            android:id="@+id/nav_PublicApp"
+            android:icon="@drawable/pub"
+            android:title="Public App"
+            android:menuCategory="secondary"/>
+
     </group>
     <item android:title="UpComming News"
         android:menuCategory="secondary">
@@ -37,6 +56,17 @@
                 android:id="@+id/nav_newYorkTimes"
                 android:icon="@drawable/ny_times_logo"
                 android:title="New York Times"
+                android:menuCategory="secondary"/></group>
+        </menu>
+    </item>
+
+    <item android:title="Fact check Ai"
+        android:menuCategory="secondary">
+        <menu>
+            <group android:checkableBehavior="single"><item
+                android:id="@+id/nav_GrokAi"
+                android:icon="@drawable/ai"
+                android:title="Grok Ai"
                 android:menuCategory="secondary"/></group>
         </menu>
     </item>

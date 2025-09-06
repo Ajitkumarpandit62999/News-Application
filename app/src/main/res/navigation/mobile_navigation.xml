@@ -32,9 +32,32 @@
         android:name="com.example.newsappitsumaircode.fragments.SkyNewsFragment"
         android:label="SKY News"
         tools:layout="@layout/fragment_sky_news" />
+
+    <fragment
+        android:id="@+id/nav_ABPNEWS"
+        android:name="com.example.newsappitsumaircode.fragments.AbpNewsFragment"
+        android:label="ABP News"
+        tools:layout="@layout/fragment_abp_news" />
+
+    <fragment
+        android:id="@+id/nav_AajTakNews"
+        android:name="com.example.newsappitsumaircode.fragments.AajTakNewsFragment"
+        android:label="AajTak News"
+        tools:layout="@layout/fragment_aajtak_news" />
+
+    <fragment
+        android:id="@+id/nav_PublicApp"
+        android:name="com.example.newsappitsumaircode.fragments.PublicNewsFragment"
+        android:label="Public App"
+        tools:layout="@layout/fragment_public_news" />
     <fragment
         android:id="@+id/nav_newYorkTimes"
         android:name="com.example.newsappitsumaircode.fragments.NewYorkTimesNewsFragment"
         android:label="New York Times"
         tools:layout="@layout/fragment_new_york_times_news" />
+    <fragment
+        android:id="@+id/nav_GrokAi"
+        android:name="com.example.newsappitsumaircode.fragments.GrokNewsFragment"
+        android:label="Grok Ai"
+        tools:layout="@layout/fragment_grok_news" />
 </navigation>
