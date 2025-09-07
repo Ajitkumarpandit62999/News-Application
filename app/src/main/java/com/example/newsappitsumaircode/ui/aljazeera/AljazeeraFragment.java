@@ -1,9 +1,11 @@
 package com.example.newsappitsumaircode.ui.aljazeera;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,16 @@ public class AljazeeraFragment extends Fragment {
         View root =inflater.inflate(R.layout.fragment_gallery, container, false);
 
         webView = root.findViewById(R.id.aljazera_webView);
+
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
+        }
+        webView.setWebChromeClient(new WebChromeClient());
+
+
+
         webView.loadUrl("https://www.aljazeera.com/");
         webView.setWebViewClient(new WebViewController());
 

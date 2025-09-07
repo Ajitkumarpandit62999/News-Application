@@ -1,5 +1,6 @@
 package com.example.newsappitsumaircode.fragments;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
 import com.example.newsappitsumaircode.R;
@@ -21,12 +23,23 @@ public class AbpNewsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_abp_news, container, false);
+        View root = inflater.inflate(R.layout.fragment_abp_news,
+                container, false);
 
         webView = root.findViewById(R.id.abp_webView);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1)
+        {
+            webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
+        }
+        webView.setWebChromeClient(new WebChromeClient());
+
+
         webView.loadUrl("https://news.abplive.com/"); // ABP News Website
         webView.setWebViewClient(new WebViewController());
 

@@ -30,8 +30,14 @@ public class GrokNewsFragment extends Fragment {
         webView = root.findViewById(R.id.grok_webView);
 
         // Enable JavaScript & storage
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setJavaScriptEnabled(true);           // Enable JS
+        webView.getSettings().setDomStorageEnabled(true);           // Enable DOM storage
+        webView.getSettings().setLoadsImagesAutomatically(true);    // Auto-load images
+        webView.getSettings().setUseWideViewPort(true);             // Enable responsive layout
+        webView.getSettings().setLoadWithOverviewMode(true);        // Fit content to screen// Enable caching
+        webView.getSettings().setDatabaseEnabled(true);             // Enable DB storage
+        webView.getSettings().setSupportZoom(true);                 // Allow zoom
+        webView.getSettings().setBuiltInZoomControls(false);
 
         // Allow auto-play for video/audio if API >= 17
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
